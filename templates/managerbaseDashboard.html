@@ -1,0 +1,63 @@
+{% load static %}
+<!Doctype html>
+<html lang="en">
+<head>
+    <title>Dashboard</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="{% static 'hms_app/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'hms_app/css/profilecss.css' %}">
+</head>
+<body>
+
+<div class="wrapper d-flex align-items-stretch">
+    <nav id="sidebar">
+        <div class="custom-menu">
+            <button type="button" id="sidebarCollapse">
+                <i class="fa fa-bars"></i>
+                <span class="sr-only">Toggle Menu</span>
+            </button>
+        </div>
+        <a class="navbar-brand yamazaki" href="{% url 'home' %}"><img src="{% static 'hms_app/img/kawakilogo.png' %}">
+        </a>
+        <ul class="list-unstyled mb-5">
+            <li>
+                <a href="{% url 'profile' %}" class="yamazaki">Dashboard</a>
+            </li>
+            <li>
+                <a href="{% url 'create_room' %}" class="yamazaki">Create Room</a>
+            </li>
+            <li>
+                <a href="{% url 'list_rooms' %}" class="yamazaki">List Rooms</a>
+            </li>
+            <li>
+                <a href="{% url 'change_room_type' %}" class="yamazaki">Change Room Type</a>
+            </li>
+            <li>
+                <a href="{% url 'list_bookings' %}" class="yamazaki">List Bookings</a>
+            </li>
+            <li>
+                <a href="{% url 'list_customers' %}" class="yamazaki">List Customers</a>
+            </li>
+            <li>
+                <a href="{% url 'list_guests' %}" class="yamazaki">List Guests</a>
+            </li>
+            <li>
+                <a href="{% url 'logout' %}" class="yamazaki">Log Out</a>
+            </li>
+        </ul>
+
+    </nav>
+
+    <div id="content" class="p-4 p-md-5 pt-5">
+        {% block content %}
+        {% endblock %}
+    </div>
+
+</div>
+
+<script src="{% static 'hms_app/js/jquery-1.12.1.min.js' %}"></script>
+<script src="{% static 'hms_app/js/bootstrap.bundle.js' %}"></script>
+<script src="{% static 'hms_app/js/main.js' %}"></script>
+</body>
+</html>

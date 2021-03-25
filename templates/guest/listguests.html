@@ -1,0 +1,37 @@
+{% extends 'managerbaseDashboard.html' %}
+{% block content %}
+    <div class="container justify-content-center">
+        <div class="row justify-content-center">
+            <div class="col-md-5 justify-content-center" style="margin-top: 190px">
+                <div class="card" id="card">
+                    <div class="card-header">
+                        <p class="card-title" id="headerfill"
+                           style="color: rgb(35, 158, 152); text-align: center;font-size: 0.5in; font-family: Bahnschrift;">
+                            LIST OF GUESTS
+                        </p>
+                    </div>
+                    <table class="table table-hover table-responsive card-body">
+                        <thead>
+                        <tr>
+                            <th id="registerfill">First name</th>
+                            <th id="registerfill">Last name</th>
+                            <th id="registerfill">Username</th>
+                            <th id="registerfill">Phone Number</th>
+                        </tr>
+                        </thead>
+                        {% for guest in guests %}
+                            <tbody>
+                            <tr>
+                                <td id="registerfill">{{ guest.name }}</td>
+                                <td id="registerfill">{{ guest.room_id }}</td>
+                                <td id="registerfill">{{ guest.booking_id }}</td>
+                                <td id="registerfill">{{ guest.status }}</td>
+                            </tr>
+                            </tbody>
+                        {% endfor %}
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

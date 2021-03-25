@@ -1,0 +1,44 @@
+{% extends 'managerbaseDashboard.html' %}
+{% block content %}
+    <div class="container justify-content-center">
+        <div class="row justify-content-center">
+            <div class="col-md-6 justify-content-center" style="margin-top: 190px">
+                <div class="card" id="card">
+                    <div class="card-header">
+                        <p class="card-title" id="headerfill"
+                           style="color: rgb(35, 158, 152); text-align: center;font-size: 0.5in; font-family: Bahnschrift;">
+                            LIST OF BOOKINGS
+                        </p>
+                    </div>
+                    <table class="table table-hover table-responsive card-body">
+                        <thead>
+                        <tr>
+                            <th id="registerfill">Booking Id</th>
+                            <th id="registerfill">Customer Id</th>
+                            <th id="registerfill">Room Type</th>
+                            <th id="registerfill">Room Number</th>
+                            <th id="registerfill">Check In Date</th>
+                            <th id="registerfill">Check Out Date</th>
+                            <th id="registerfill">Payment Status</th>
+                        </tr>
+                        </thead>
+                        {% for booking in bookings %}
+                            <tbody>
+                            <tr>
+                                <td id="registerfill">{{ booking.booking_reference }}</td>
+                                <td id="registerfill">{{ booking.customer_id }}</td>
+                                <td id="registerfill">{{ booking.room_type }}</td>
+                                <td id="registerfill">{{ booking.room_number }}</td>
+                                <td id="registerfill">{{ booking.check_in }}</td>
+                                <td id="registerfill">{{ booking.check_out }}</td>
+                                <td id="registerfill">{{ booking.payment_status }}</td>
+                            </tr>
+                            </tbody>
+                        {% endfor %}
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
